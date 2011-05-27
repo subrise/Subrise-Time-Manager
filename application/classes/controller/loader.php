@@ -1,0 +1,18 @@
+<?php defined('SYSPATH') or die('No direct script access.');
+
+/**
+ * Template controller that sets and loads default properties
+ */
+class Controller_Loader extends Controller_Template {
+	
+	public $template = 'loader';
+	
+	public function after()
+	{
+		if (isset($this->template->page_title))
+			View::bind_global('page_title', $this->template->page_title);
+		
+		return parent::after();
+	}
+
+} // End Controller_Loader

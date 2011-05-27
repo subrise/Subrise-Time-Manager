@@ -78,10 +78,47 @@ a:hover { color: #036; }
 /**
  * Primary styles
  *
- * Author: 
+ * Author: Sammy Hubner
  */
 
+/* fonts
+*************************************************************************/
+.content h1					{ font-size: 138.5%; margin: 1em 0; }
+.content h2              	{ font-size: 116%; margin: 1em 0; }
+.content h3              	{ font-size: 108%; margin: 1em 0; }
+.content p, .content td		{ line-height:18px; font-size:93%; }
+.content h4, .content p,
+.content blockquote, .content ul,
+.content fieldset, .content form,
+.content ol, .content dl, .content dir,
+.content menu            	{ margin: 1em 0 }
+.content h4,
+.content h5, .content h6, .content b, .content h1 span
+.content strong          	{ font-weight: bolder }
+.content blockquote      	{ margin-left: 40px; margin-right: 40px }
 
+.content big             	{ font-size: 123.1%; }
+.content small, .content sub, .content sup 
+							{ font-size: 77%; }
+
+.content ol, .content ul, .content dir, .content menu, 
+.content dd					{ margin-left: 40px }
+.content ol li				{ list-style-type:decimal;}
+.content ul li				{ list-style-type:disc; min-height: 20px;}
+.content em, .content i		{ font-style: italic;}
+.content a					{ color: #313131; }
+.content a:hover			{ text-decoration:none;}
+
+.blue{ color: #00617e; }
+
+/* END: fonts
+*************************************************************************/
+
+body
+{
+	width:980px;
+	margin:0 auto;
+}
 
 
 

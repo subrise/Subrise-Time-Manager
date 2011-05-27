@@ -7,7 +7,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Time Management System - Subrise Games</title>
+	<title><?php
+		if (isset($page_title))
+			echo $page_title . ' | ';
+	?>Subrise Games</title>
 	<meta name="description" content="Subrise Games Time Management System">
 	<meta name="author" content="Sammy Hubner">
 
@@ -20,20 +23,4 @@
 
 </head>
 
-<body>
-
-	<h1>Hello World!</h1>
-
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-	<script>window.jQuery || document.write("<script src='/assets/js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
-
-
-	<!-- scripts concatenated and minified via ant build script-->
-	<script src="/assets/js/plugins.js"></script>
-	<script src="/assets/js/script.js"></script>
-	<!-- end scripts-->
-
-
-
-</body>
-</html>
+<body class="content">
