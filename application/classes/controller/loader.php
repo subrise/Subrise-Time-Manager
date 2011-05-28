@@ -13,7 +13,7 @@ class Controller_Loader extends Controller_Template {
 		
 		// needs to be logged in 
 		if ( ! Auth::instance()->logged_in() AND $this->request->action() !== 'login')
-			$this->request->redirect('welcome/login');
+			$this->request->redirect('auth/login');
 	}
 	
 	public function after()
