@@ -1,5 +1,9 @@
-<?php echo View::factory('particles/masthead') ?>
-
-	<h1>Hello World!</h1>
+<?php 
+	echo View::factory('particles/masthead'); 
 	
-<?php echo View::factory('particles/footer') ?>
+	if (isset($page_view))
+		echo $page_view;
+	else
+		echo View::factory('pages/404');
+	
+	echo View::factory('particles/footer');
