@@ -16,13 +16,15 @@ class Controller_Auth extends Controller {
 		// if user is already logged in, send him to the welcome page
 		if (Auth::instance()->logged_in())
 			$this->request->redirect('welcome');
+			
+		$post = $this->request->post();
 		
-		if (isset($_POST['username'], $_POST['password']))
+		if (isset($post['username'], $post['password']))
 		{
 			// check for valid login
 			// TODO: I think the login function escapes the values by itself
-			$username = $_POST['username'];
-			$password = $_POST['password'];
+			$username = $post['username'];
+			$password = $post['password'];
 			
 			if (Auth::instance()->login($username, $password))
 			{
