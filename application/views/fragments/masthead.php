@@ -24,3 +24,7 @@
 </head>
 
 <body class="content">
+	<ul id="menu_main">
+		<li><a href="<?php echo URL::site('projects')?>">Projects</a></li>
+		<li><a href="<?php echo URL::site('auth/logout')?>">Logout</a></li>
+	</ul><!-- #menu_main -->

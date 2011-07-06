@@ -138,6 +138,37 @@ input.submit
 
 
 
+/* menu_main
+*************************************************************************/
+#menu_main
+{
+	overflow:hidden;
+	list-style:none;
+}
+
+#menu_main li
+{
+	float:left;
+	list-style:none;
+	border:1px solid #000;
+}
+
+#menu_main li:first-child
+{
+	border-right:none;
+}
+
+#menu_main a
+{
+	text-decoration:none;
+	display:block;
+	padding:5px 10px;
+}
+
+#menu_main a:hover
+{
+	background:#ccc;
+}
 
 
 
