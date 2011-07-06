@@ -1,9 +1,9 @@
 <?php 
-	echo View::factory('particles/masthead'); 
+	echo View::factory('fragments/masthead'); 
 	
 	if (isset($page_view))
 		echo $page_view;
 	else
 		echo View::factory('pages/404');
 	
-	echo View::factory('particles/footer');
+	echo View::factory('fragments/footer');
