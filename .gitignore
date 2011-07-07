@@ -1,2 +1,4 @@
 application/logs
 application/cache
+.project
+.settings
