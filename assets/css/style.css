@@ -140,19 +140,6 @@ a:hover { color: #036; }
 	margin:0 auto;
 }
 
-label
-{
-	width:100px;
-	float:left;
-}
-
-input.submit
-{
-	margin:0 0 0 100px;
-}
-
-
-
 /* menu_main
 *************************************************************************/
 #menu_main
@@ -189,7 +176,37 @@ input.submit
 	background:#ccc;
 }
 
+/* Global styles
+*************************************************************************/
+label
+{
+	width:100px;
+	float:left;
+}
 
+input.submit
+{
+	margin:0 0 0 100px;
+}
+
+th
+{
+	padding: 0 10px 10px;
+	border-bottom:3px solid #777;
+	margin:0 0 10px;
+}
+
+td
+{
+	padding:10px;
+}
+
+
+
+td a.iconic
+{
+	text-decoration:none;
+}
 
 
 

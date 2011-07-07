@@ -18,7 +18,8 @@
 	<link rel="shortcut icon" href="/assets/img/favicon.ico">
 	<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 
-	<link rel="stylesheet" href="/assets/css/style.css?v=2">
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="/assets/iconic/iconic.css">
 	<script src="/assets/js/libs/modernizr-1.7.min.js"></script>
 
 </head>

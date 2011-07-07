@@ -1,6 +1,11 @@
 Subrise Time Manager
 ====================
 
+v0.0.3
+------
+Worked more on aesthetic things. Like adding icons. Found some cool looking icons on http://somerandomdude.com/projects/iconic/
+
+
 v0.0.2
 ------
 Found some time again to work on this project.
