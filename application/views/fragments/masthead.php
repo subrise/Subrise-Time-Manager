@@ -24,7 +24,14 @@
 </head>
 
 <body class="content">
+	<?php if (isset($error_feedback)):?>
+		<div class="errorFeedback">
+			<p><?php echo $error_feedback ?></p>
+		</div><!-- .errorFeedback -->
+	<?php endif; ?>
+	
 	<ul id="menu_main">
-		<li><a href="<?php echo URL::site('projects')?>">Projects</a></li>
+		<li><a href="/">Welcome</a></li>
+		<li><a href="<?php echo URL::site('project')?>">Projects</a></li>
 		<li><a href="<?php echo URL::site('auth/logout')?>">Logout</a></li>
 	</ul><!-- #menu_main -->

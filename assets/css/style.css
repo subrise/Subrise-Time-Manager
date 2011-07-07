@@ -144,6 +144,8 @@ input.submit
 {
 	overflow:hidden;
 	list-style:none;
+	margin:10px 0;
+	padding:0;
 }
 
 #menu_main li
@@ -151,11 +153,12 @@ input.submit
 	float:left;
 	list-style:none;
 	border:1px solid #000;
+	border-left:none;
 }
 
 #menu_main li:first-child
 {
-	border-right:none;
+	border:1px solid #000;
 }
 
 #menu_main a
