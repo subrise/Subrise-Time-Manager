@@ -6,4 +6,4 @@
 	else
 		echo View::factory('pages/404');
 	
-	echo View::factory('fragments/footer');
+	echo View::factory('fragments/footer'); ?>

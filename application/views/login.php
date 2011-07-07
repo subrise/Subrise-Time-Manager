@@ -24,27 +24,31 @@
 </head>
 
 <body class="content">
-	<h1>Login</h1>
-
 	<?php if (isset($error_feedback)):?>
 		<div class="errorFeedback">
-			<p><?php echo $error_feedback ?></p>
+			<div class="wrapper">
+				<p><?php echo $error_feedback ?></p>
+			</div><!-- .wrapper -->
 		</div><!-- .errorFeedback -->
 	<?php endif; ?>
-
-	<form method="post" accept-charset="utf-8">
-		<p>
-			<label for="txtUsername">Username</label>
-			<input type="text" name="username" value="" id="txtUsername">
-		</p>
 	
-		<p>
-			<label for="txtPassword">Password</label>
-			<input type="password" name="password" value="" id="txtPassword">
-		</p>
+	<div class="wrapper">
+		<h1>Login</h1>
+		
+		<form method="post" accept-charset="utf-8">
+			<p>
+				<label for="txtUsername">Username</label>
+				<input type="text" name="username" value="" id="txtUsername">
+			</p>
 
-		<p><input class="submit" type="submit" value="Login &rarr;"></p>
-	</form>
+			<p>
+				<label for="txtPassword">Password</label>
+				<input type="password" name="password" value="" id="txtPassword">
+			</p>
+
+			<p><input class="submit" type="submit" value="Login &rarr;"></p>
+		</form>
+	</div><!-- .wrapper -->
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
 	<script>window.jQuery || document.write("<script src='/assets/js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
@@ -54,6 +58,5 @@
 	<script src="/assets/js/plugins.js"></script>
 	<script src="/assets/js/script.js"></script>
 	<!-- end scripts-->
-
 </body>
 </html>

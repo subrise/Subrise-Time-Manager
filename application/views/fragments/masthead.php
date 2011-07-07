@@ -26,11 +26,13 @@
 <body class="content">
 	<?php if (isset($error_feedback)):?>
 		<div class="errorFeedback">
-			<p><?php echo $error_feedback ?></p>
+			<div class="wrapper">
+				<p><?php echo $error_feedback ?></p>
+			</div><!-- .wrapper -->
 		</div><!-- .errorFeedback -->
 	<?php endif; ?>
 	
-	<ul id="menu_main">
+	<ul id="menu_main" class="wrapper">
 		<li><a href="/">Welcome</a></li>
 		<li><a href="<?php echo URL::site('project')?>">Projects</a></li>
 		<li><a href="<?php echo URL::site('auth/logout')?>">Logout</a></li>

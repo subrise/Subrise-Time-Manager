@@ -1,23 +1,27 @@
-<h1>Projects</h1>
-<p>This view will show an overview of all the projects from which you can edit them.</p>
+<div class="wrapper">
 
-<?php echo  HTML::anchor('project/edit', 'Add new project') ?>
+	<h1>Projects</h1>
+	<p>This view will show an overview of all the projects from which you can edit them.</p>
 
-<?php if ($projects->count() > 0) { ?>
-<table>
-	<tr>
-		<th>Naam project</th>
-		<th>Bewerken</th>
-	</tr>
-	
-	<?php foreach ($projects as $project) { ?>
-	
-	<tr>
-		<td><?php echo $project->name?></td>
-		<td>bewerken verwijderen</td>
-	</tr>
-	
+	<?php echo  HTML::anchor('project/edit', 'Add new project') ?>
+
+	<?php if ($projects->count() > 0) { ?>
+	<table>
+		<tr>
+			<th>Naam project</th>
+			<th>Bewerken</th>
+		</tr>
+
+		<?php foreach ($projects as $project) { ?>
+
+		<tr>
+			<td><?php echo $project->name?></td>
+			<td>bewerken verwijderen</td>
+		</tr>
+
+		<?php } ?>
+
+	</table>
 	<?php } ?>
 	
-</table>
-<?php } ?>
+</div><!-- .wrapper -->

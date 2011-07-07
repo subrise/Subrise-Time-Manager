@@ -113,13 +113,28 @@ a:hover { color: #036; }
 
 .errorFeedback
 {
-	background:#ffff00;
+	background:#ffff57;
 	color:#f00;
-	border:3px solid #000;
+	border-bottom:1px solid #444;
 	padding:10px;
 }
 
-body
+.errorFeedback .close
+{
+	display:block;
+	cursor:pointer;
+	background:url(/assets/img/cross20x20.png) no-repeat center top;
+	width:20px;
+	height:20px;
+	float:right;
+}
+
+.errorFeedback .close:hover
+{
+	background-position:center bottom;
+}
+
+.wrapper
 {
 	width:980px;
 	margin:0 auto;
@@ -144,7 +159,8 @@ input.submit
 {
 	overflow:hidden;
 	list-style:none;
-	margin:10px 0;
+	margin:10px auto;
+	width:980px;
 	padding:0;
 }
 
@@ -188,7 +204,6 @@ input.submit
 .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
-
 
 @media all and (orientation:portrait) {
 
