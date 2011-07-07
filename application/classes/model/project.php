@@ -12,5 +12,27 @@ class Model_Project extends ORM {
 			),
 		);
 	}
+	
+	/**
+	 * Returns all the none trashed projects.
+	 */
+	public function get_projects()
+	{
+		return $this
+			->where('trashed', '!=', 1)
+			->order_by('name')
+			->find_all();
+	}
+	
+	public function trash()
+	{
+		if ($this->loaded())
+		{
+			$this->trashed = 1;
+			return $this->save();
+		}
+		else
+			return FALSE;
+	}
 
 } // End Model_Project

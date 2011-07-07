@@ -2,21 +2,23 @@
 
 class Controller_Project extends Controller_Loader {
 	
+	/**
+	 * This action is the welcome page for the project module.
+	 */
 	public function action_index()
 	{
-		$view = View::factory('pages/projects');
-		
-		$projects = ORM::factory('project')
-			->order_by('name')
-			->find_all();
+		$view     = View::factory('pages/projects');
+		$projects = ORM::factory('project')->get_projects();
 		
 		$view->bind('projects', $projects);
-		
 		
 		$this->template->page_title = 'Projects';
 		$this->template->page_view  = $view;
 	}
 	
+	/**
+	 * This action will create or edit a project. 
+	 */
 	public function action_edit()
 	{
 		$project = ORM::factory('project', $this->request->param('id'));
@@ -54,6 +56,15 @@ class Controller_Project extends Controller_Loader {
 		}
 		$this->template->page_view = View::factory('pages/project_edit')
 			->bind('project', $project);
+	}
+	
+	/**
+	 * This action will trash the project, but not delete it.
+	 */
+	public function action_trash()
+	{
+		$project = ORM::factory('project', $this->request->param('id'));
+		$project->trash();
 	}
 
 } // End Controller_Project
