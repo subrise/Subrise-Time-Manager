@@ -1,6 +1,12 @@
 Subrise Time Manager
 ====================
 
+v0.0.2
+------
+Found some time again to work on this project.
+* Added login functionality (sql dump in assets/db folder) u:admin p:test
+* And made a start with managing the projects
+
 v0.0.1
 ------
 * started with Kohana version 3.1
