@@ -35,14 +35,11 @@ class Controller_Project extends Controller_Loader {
 			}
 			catch (ORM_Validation_Exception $e)
 			{
-				$errors = $e->errors('/models/project');
-				$fb = '<ul>';
+				$errors = $e->errors('models');
 				foreach ($errors as $error_key => $error)
 				{
-					$fb .= '<li>'.$error.'</li>';
+					Msg::instance()->set( Msg::ERROR, $error);
 				}
-				$fb .= '</ul>';
-				$this->template->error_feedback = $fb;
 			}
 		}
 		

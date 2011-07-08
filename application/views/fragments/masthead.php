@@ -24,14 +24,9 @@
 
 </head>
 
-<body class="content">
-	<?php if (isset($error_feedback)):?>
-		<div class="errorFeedback">
-			<div class="wrapper">
-				<p><?php echo $error_feedback ?></p>
-			</div><!-- .wrapper -->
-		</div><!-- .errorFeedback -->
-	<?php endif; ?>
+<body>
+	<?php echo Msg::instance()->render();?>
+
 	
 	<ul id="menu_main" class="wrapper">
 		<li><a href="/">Welcome</a></li>

@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper content">
 	
 	<h1><?php echo $page_title ?></h1>
 

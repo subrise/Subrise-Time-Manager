@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper content">
 	
 	<h1>Hello World!</h1>
 	<p>

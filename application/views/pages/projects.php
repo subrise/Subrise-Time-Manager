@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper content">
 
 	<h1>Projects</h1>
 	<p>This view will show an overview of all the projects from which you can edit them.</p>

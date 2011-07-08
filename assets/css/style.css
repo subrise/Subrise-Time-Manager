@@ -111,34 +111,54 @@ a:hover { color: #036; }
 /* END: fonts
 *************************************************************************/
 
-.errorFeedback
-{
-	background:#ffff57;
-	color:#f00;
-	border-bottom:1px solid #444;
-	padding:10px;
-}
-
-.errorFeedback .close
-{
-	display:block;
-	cursor:pointer;
-	background:url(/assets/img/cross20x20.png) no-repeat center top;
-	width:20px;
-	height:20px;
-	float:right;
-}
-
-.errorFeedback .close:hover
-{
-	background-position:center bottom;
-}
-
 .wrapper
 {
 	width:980px;
 	margin:0 auto;
 }
+
+/* Messages
+*************************************************************************/
+#messages
+{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+#messages li
+{
+	list-style:none;
+}
+
+#messages li p
+{
+	width:980px;
+	margin:0 auto;
+	padding:10px;
+}
+
+#messages li.error
+{
+	background:#ffff57;
+	color:#f00;
+	border-bottom:1px solid #444;
+}
+
+#messages li .close
+{
+	cursor:pointer;
+	float:right;
+	font-size:20px;
+	color:#f00;
+}
+
+#messages li .close:hover
+{
+	color:#f44;
+}
+
+
 
 /* menu_main
 *************************************************************************/

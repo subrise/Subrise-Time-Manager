@@ -24,16 +24,10 @@
 
 </head>
 
-<body class="content">
-	<?php if (isset($error_feedback)):?>
-		<div class="errorFeedback">
-			<div class="wrapper">
-				<p><?php echo $error_feedback ?></p>
-			</div><!-- .wrapper -->
-		</div><!-- .errorFeedback -->
-	<?php endif; ?>
+<body>
+	<?php echo Msg::instance()->render();?>
 	
-	<div class="wrapper">
+	<div class="wrapper content">
 		<h1>Login</h1>
 		
 		<form method="post" accept-charset="utf-8">

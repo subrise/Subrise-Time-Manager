@@ -33,10 +33,10 @@ class Controller_Auth extends Controller {
 			}
 			else
 			{
+				Msg::instance()->set( Msg::ERROR, 'Username and password combination did not match.');
 				// failed login
 				$view = View::factory('login')
-					->set('page_title', 'Login failed')
-					->set('error_feedback', 'Username and password combination did not match.');
+					->set('page_title', 'Login failed');
 				$this->response->body($view);
 			}
 		}

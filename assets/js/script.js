@@ -4,11 +4,11 @@
 
 $(document).ready(function(){
 
-	$('.errorFeedback .wrapper').prepend('<div class="close"></div>');
+	$('#messages li p').prepend('<div class="close iconic x-alt"></div>');
 	
-	$('.errorFeedback .close').click(function(){
+	$('#messages li .close').click(function(){
 		$(this).hide();
-		$('.errorFeedback').slideUp();
+		$(this).parent().parent().slideUp();
 	});
 	
 });
