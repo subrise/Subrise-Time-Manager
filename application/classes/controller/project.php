@@ -62,6 +62,8 @@ class Controller_Project extends Controller_Loader {
 	{
 		$project = ORM::factory('project', $this->request->param('id'));
 		$project->trash();
+		Msg::instance()->set( Msg::NOTICE, "You've just send a project to the trash bin. You can still restore it.");
+		$this->request->redirect('project');
 	}
 
 } // End Controller_Project
