@@ -3,12 +3,20 @@
 	<h1>Projects</h1>
 	<p>This view will show an overview of all the projects from which you can edit them.</p>
 
-	<h2>
-		<span class="iconic arrow-right-alt" style="font-size:21px"></span>
-		<a href="<?php echo URL::site('project/edit')?>">
-			 Add new project
-		</a>
-	</h2>
+	<ul class="menu hor">
+		<li>
+			<span class="iconic arrow-right-alt" style="font-size:21px"></span>
+			<a href="<?php echo URL::site('project/edit')?>">
+				 Add new project
+			</a>
+		</li>
+		<li>
+			<span class="iconic trash" style="font-size:21px"></span>
+			<a href="<?php echo URL::site('project/trashbin')?>">
+				 Trash bin
+			</a>
+		</li>
+	</ul><!-- .menu.hor -->
 	
 	<?php if ($projects->count() > 0) { ?>
 	<table>

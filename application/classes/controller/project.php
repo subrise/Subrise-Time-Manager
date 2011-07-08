@@ -65,5 +65,17 @@ class Controller_Project extends Controller_Loader {
 		Msg::instance()->set( Msg::NOTICE, "You've just send a project to the trash bin. You can still restore it.");
 		$this->request->redirect('project');
 	}
+	
+	/**
+	 * This action will show all items in the trashbin
+	 */
+	public function action_trashbin()
+	{
+		$trash = ORM::factory('project')->get_trash();
+		$this->template->page_title   = 'Projects Trash Bin';
+		$this->template->page_view    = View::factory('pages/trashbin')
+			->bind('trash', $trash)
+			->set('trash_type', 'Project name');
+	}
 
 } // End Controller_Project

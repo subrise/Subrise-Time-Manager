@@ -155,7 +155,7 @@ a:hover { color: #036; }
 
 
 
-/* menu_main
+/* Menu's | #menu_main >> Main menu ofcourse - .menu >> global menu layout
 *************************************************************************/
 #menu_main
 {
@@ -189,6 +189,32 @@ a:hover { color: #036; }
 #menu_main a:hover
 {
 	background:#ccc;
+}
+
+/* .menu
+------------------------------------------------------------------------*/
+ul.menu
+{
+	padding:0;
+	margin:10px 0;
+	list-style:none;
+}
+
+.menu.hor li
+{
+	display:inline;
+	list-style:none;
+	padding:0 10px;
+}
+
+.menu a
+{
+	text-decoration:none;
+}
+
+.menu a:hover
+{
+	text-decoration:underline;
 }
 
 /* Global styles

@@ -24,6 +24,27 @@ class Model_Project extends ORM {
 			->find_all();
 	}
 	
+	public function get_trash()
+	{
+		$orm = $this
+			->where('trashed', '=', 1)
+			->order_by('name')
+			->find_all();
+			
+		$ret = array();
+		foreach ($orm as $result)
+		{
+			$project              = new stdClass();
+			$project->id          = $result->id;
+			$project->name        = $result->name;
+			$project->restore_url = URL::site('project/restore/'.$project->id);
+			$project->delete_url  = URL::site('project/delete/'.$project->id);
+			$ret[]                = $project;
+		}
+		
+		return $ret;
+	}
+	
 	public function trash()
 	{
 		if ($this->loaded())
