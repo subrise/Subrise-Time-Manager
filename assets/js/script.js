@@ -12,8 +12,22 @@ $(document).ready(function(){
 	});
 	
 	$('a.delete').click(function(){
-		return confirm('This action will cause a permanent delete of the record. Do you want to continue?','blaat');
+		$(this).hide();
+		
+		url = $(this).attr('href');
+		
+		$(this).parent().append('<span>Are you sure?<br /> <a href="'+url+'">Yes</a> <a class="close_delete" href="#">No</a></span>');
+		
+		$('a.close_delete').click(function(){
+			$(this).parent().siblings('.delete').show();
+			$(this).parent().remove();
+			return false;
+		});
+		
+		return false;
 	});
+	
+	
 	
 });
 

@@ -55,5 +55,16 @@ class Model_Project extends ORM {
 		else
 			return FALSE;
 	}
+	
+	public function restore()
+	{
+		if ($this->loaded())
+		{
+			$this->trashed = 0;
+			return $this->save();
+		}
+		else
+			return FALSE;
+	}
 
 } // End Model_Project

@@ -77,5 +77,17 @@ class Controller_Project extends Controller_Loader {
 			->bind('trash', $trash)
 			->set('trash_type', 'Project name');
 	}
+	
+	public function action_restore()
+	{
+		ORM::factory('project', $this->request->param('id'))->restore();
+		$this->request->redirect('project/trashbin');
+	}
+	
+	public function action_delete()
+	{
+		ORM::factory('project', $this->request->param('id'))->delete();
+		$this->request->redirect('project/trashbin');
+	}
 
 } // End Controller_Project

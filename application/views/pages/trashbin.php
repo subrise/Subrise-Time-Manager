@@ -1,6 +1,7 @@
 <div class="wrapper content">
 	
 	<h1><?php echo $page_title ?></h1>
+	<p>Deleting items from this page cannot be undone.</p>
 
 	<?php if (count($trash) > 0) { ?>
 	<table>
@@ -24,3 +25,5 @@
 	<?php } ?>
 
 </div><!-- .wrapper.content -->
+
+<div id="dialog-delete"></div><!-- #dialog -->
