@@ -20,9 +20,6 @@ class Controller_Loader extends Controller_Template {
 	{
 		if (isset($this->template->page_title))
 			View::bind_global('page_title', $this->template->page_title);
-			
-		if (isset($this->template->error_feedback))
-			View::bind_global('error_feedback', $this->template->error_feedback);
 		
 		return parent::after();
 	}
