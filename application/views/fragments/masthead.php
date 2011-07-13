@@ -31,5 +31,6 @@
 	<ul id="menu_main" class="wrapper">
 		<li><a href="/">Welcome</a></li>
 		<li><a href="<?php echo URL::site('project')?>">Projects</a></li>
+		<li><a href="<?php echo URL::site('user')?>">Users</a></li>
 		<li><a href="<?php echo URL::site('auth/logout')?>">Logout</a></li>
 	</ul><!-- #menu_main -->

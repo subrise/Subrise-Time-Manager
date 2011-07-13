@@ -5,7 +5,7 @@
 	<?php echo Form::open('project/edit/'.$project->id) ?>
 
 		<p>
-			<label for="txtName">Project name:</label for="txtName">
+			<label for="txtName">Project name:</label>
 			<input id="txtName" type="text" name="name" value="<?php echo $project->name; ?>" />
 		</p>
 		<p>

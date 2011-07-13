@@ -27,7 +27,14 @@ $(document).ready(function(){
 		return false;
 	});
 	
-	
+	// User edit form
+	$('#frmUserEdit').submit(function(){
+		if ($('#txtPassword').val() != '' && $('#txtPassword').val() != $('#txtPassword2').val())
+		{
+			alert('The two passwords are not identical.');
+			return false;
+		}
+	});
 	
 });
 

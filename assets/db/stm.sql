@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 07, 2011 at 07:16 PM
+-- Generation Time: Jul 09, 2011 at 01:49 PM
 -- Server version: 5.5.14
 -- PHP Version: 5.3.4
 
@@ -29,6 +29,7 @@ DROP TABLE IF EXISTS `uur_projects`;
 CREATE TABLE IF NOT EXISTS `uur_projects` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
+  `trashed` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -106,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `uur_users` (
 --
 
 INSERT INTO `uur_users` (`id`, `email`, `username`, `password`, `logins`, `last_login`) VALUES
-(1, 'sammy@subrise.com', 'admin', '294948fc2a768e3c435609d32e03aa54e1a181c62e3ca984e0af9552d370835e', 1, 1309994308);
+(1, 'sammy@subrise.com', 'admin', '294948fc2a768e3c435609d32e03aa54e1a181c62e3ca984e0af9552d370835e', 5, 1310210219);
 
 -- --------------------------------------------------------
 

@@ -145,13 +145,17 @@ a:hover { color: #036; }
 	font-size:20px;
 }
 
-#messages .error               { background:#ffff57; color:#f00; border-bottom:1px solid #444; }
-#messages .error .close        { color:#f00; }
-#messages .error .close:hover  { color:#f44; }
+#messages .error                { background:#ffff57; color:#f00; border-bottom:1px solid #444; }
+#messages .error .close         { color:#f00; }
+#messages .error .close:hover   { color:#f44; }
 
-#messages .notice              { background:#007bff; color:#fff; border-bottom:1px solid #444; }
-#messages .notice .close       { color:#fff; }
-#messages .notice .close:hover { color:#eee; }
+#messages .notice               { background:#007bff; color:#fff; border-bottom:1px solid #444; }
+#messages .notice .close        { color:#fff; }
+#messages .notice .close:hover  { color:#eee; }
+
+#message .success               { background:#00ff1e; color:#000; border-bottom:1px solid 00ff1e; }
+#message .success .close        { color:#000; }
+#message .success .close:hover  { color:#999; }
 
 
 
