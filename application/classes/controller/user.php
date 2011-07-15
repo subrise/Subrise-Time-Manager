@@ -22,18 +22,17 @@ class Controller_User extends Controller_Loader {
 	 */
 	public function action_edit()
 	{
+		$user = ORM::factory('user', $this->request->param('id'));
+		
 		// check if user has enough rights to edit 
-		$user = Auth::instance()->get_user();
-		$admin_role = $user->roles->where('name','=', 'admin')->find();
-		if ( 'admin' != $admin_role->name && $this->request->param('id') != $user->id)
+		if ( ! Auth::instance()->logged_in('admin') && Auth::instance()->get_user()->id != $user->id )
 		{	
-			Msg::instance()->set(Msg::ERROR, 'Your account is not allowed to edit other user accounts.');
+			Msg::instance()->set(Msg::ERROR, 'Your account is not allowed to create or edit other user accounts.');
 			$this->request->redirect('user');	
 		}
 		
 		
 		$view = View::factory('pages/user_edit');
-		$user = ORM::factory('user', $this->request->param('id'));
 		$view->bind('user', $user);
 		
 		$post = $this->request->post();
