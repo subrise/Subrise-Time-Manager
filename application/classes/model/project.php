@@ -1,6 +1,12 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
 class Model_Project extends ORM {
+	
+	protected $_has_many = array(
+		'activities' => array(
+			'model' => 'activity',
+		),
+	);
 
 	public function rules()
 	{
@@ -8,7 +14,7 @@ class Model_Project extends ORM {
 			'name' => array(
 				array('not_empty'),
 				array('min_length', array(':value', 3)),
-				array('max_length', array(':value', 100)),
+				array('max_length', array(':value', 255)),
 			),
 		);
 	}
