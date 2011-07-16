@@ -1,0 +1,51 @@
+Project: Subrise Time Manager
+Client : Subrise Games
+
+---------------------------------------
+
+User     : Sammy Hubner
+Activity : Database normalising
+Tags     : Technical, database
+Starting : July 16 2011 22:00
+Break    : July 16 2011 22:30
+Starting : July 16 2011 23:00
+Ending   : July 16 2011 23:45
+
+
+ +-----------------+
+ | Activities      |
+ +-----------------+
+ | *id             |
+ | project_id      |  * deleting the project will delete the activity
+ | name            |
+ | note            |
+ | estimate_hours  |
+ +-----------------+
+
+ +-----------------+
+ | Hours           |
+ +-----------------+
+ | *id             |
+ | activity_id     |  * deleting the activity will delete the hours
+ | user_id         |  * deleting the user will keep the  hours
+ | start           |
+ | end             |
+ +-----------------+
+
+ +-----------------+
+ | tags            |
+ +-----------------+
+ | *id             |
+ | name            |
+ +-----------------+
+
+ +-----------------+
+ | tags_activities |
+ +-----------------+
+ | tag_id          |  * deleting the tag will delete the connection
+ | activity_id     |  * deleting the activity will delete the connection
+ +-----------------+
+
+
+
+ 
