@@ -31,6 +31,10 @@
 	<ul id="menu_main" class="wrapper">
 		<li><a href="/">Welcome</a></li>
 		<li><a href="<?php echo URL::site('project')?>">Projects</a></li>
+		<?php if (Auth::instance()->logged_in('admin')) : ?>
 		<li><a href="<?php echo URL::site('user')?>">Users</a></li>
+		<?php else: ?>
+		<li><a href="<?php echo URL::site('user/edit/'.Auth::instance()->get_user()->id)?>">My account</a></li>
+		<?php endif; ?>
 		<li><a href="<?php echo URL::site('auth/logout')?>">Logout</a></li>
 	</ul><!-- #menu_main -->

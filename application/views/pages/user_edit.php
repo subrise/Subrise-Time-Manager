@@ -21,15 +21,36 @@
 			<input id="txtPassword2" type="password" name="password2">
 		</p><br class="clear">
 		
+		
+		<?php if (Auth::instance()->logged_in('admin'))  :?>
 		<fieldset>
 			<legend>Roles</legend>
-			
 			<p>
 				<label for="checkLogin">Login</label>
-				<input type="checkbox" name="roles[]" value="1" id="checkLogin">
+				<?php
+					$checked = '';
+					$login_role = ORM::factory('role', array('name' => 'login'));
+					if ($user->has('roles', $login_role))
+						$checked = 'checked';
+				
+				?>
+				<input type="checkbox" name="roles[]" value="<?php echo $login_role->id ?>" id="checkLogin" <?php echo $checked ?>>
+			</p>
+			
+			<p>
+				<label for="checkLogin">Admin</label>
+				<?php
+					$checked = '';
+					$admin_role = $roles = ORM::factory('role', array('name' => 'admin'));
+					if ($user->has('roles', $admin_role))
+						$checked = 'checked';
+				
+				?>
+				<input type="checkbox" name="roles[]" value="<?php echo $admin_role->id ?>" id="checkLogin" <?php echo $checked ?>>
 			</p>
 			
 		</fieldset>
+		<?php endif; ?>
 		
 		<p>
 			<input class="submit" type="submit" name="edit" value="Save">

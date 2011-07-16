@@ -60,6 +60,11 @@ class Controller_User extends Controller_Loader {
 				else
 					Msg::instance()->set(Msg::ERROR, 'The two passwords do not match.');
 				
+				if (Auth::instance()->logged_in('admin') && isset($post['roles']))
+				{
+					// add roles to the user
+				}
+				
 			}
 			Catch (ORM_Validation_Exception $e)
 			{
