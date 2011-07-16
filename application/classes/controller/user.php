@@ -48,21 +48,35 @@ class Controller_User extends Controller_Loader {
 				if ($user->loaded())
 				{
 					$user->save();
-					Msg::instance()->set( Msg::SUCCESS, 'Account has succesfully been created.');
+					Msg::instance()->set( Msg::SUCCESS, 'Account has been updated.');
 				}
 				else if ( ! empty($post['password']) && $post['password'] == $post['password2'] )
 				{
 					$user->save();
-					Msg::instance()->set( Msg::SUCCESS, 'Account has been updated.');
+					Msg::instance()->set( Msg::SUCCESS, 'Account has succesfully been created.');
 				}
 				else if (empty($post['password']))
 					Msg::instance()->set(Msg::ERROR, 'Cannot create an account with an empty password.');
 				else
 					Msg::instance()->set(Msg::ERROR, 'The two passwords do not match.');
 				
-				if (Auth::instance()->logged_in('admin') && isset($post['roles']))
+				if (Auth::instance()->logged_in('admin') && $user->loaded())
 				{
 					// add roles to the user
+					// get all available roles
+					$roles = ORM::factory('role')->find_all();
+					$user_roles = Arr::get($post,'roles',array());
+					foreach ($roles as $role)
+					{
+						if (in_array($role->id, $user_roles))
+						{
+							$user->add('roles', $role);
+						}
+						else
+						{
+							$user->remove('roles', $role);
+						}
+					}
 				}
 				
 			}
