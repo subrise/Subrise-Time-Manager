@@ -109,6 +109,7 @@ Kohana::modules(array(
 	
 	// third party modules
 	'msg'        => MODPATH.'msg',        // Notification module by Martin Dubbelman
+	'xgmarkdown' => MODPATH.'xgmarkdown', // Converts Markdown syntax
 	));
 
 /**
