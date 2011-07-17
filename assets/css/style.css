@@ -108,6 +108,8 @@ a:hover { color: #036; }
 .content em, .content i		{ font-style: italic;}
 .content a:hover			{ text-decoration:none;}
 
+.iconic { text-decoration:none; }
+
 /* END: fonts
 *************************************************************************/
 

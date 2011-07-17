@@ -29,7 +29,7 @@
 		<?php foreach ($projects as $project) { ?>
 
 		<tr>
-			<td><?php echo $project->name?></td>
+			<td><a href="<?php echo URL::site('project/show/'.$project->id)?>"><?php echo $project->name?></a></td>
 			<td align="center"><a href="<?php echo URL::site('project/edit/'.$project->id)?>" class="iconic cog" style="font-size:21px"></a></td>
 			<td align="center"><a href="<?php echo URL::site('project/trash/'.$project->id)?>" class="iconic trash" style="font-size:21px"></a></td>
 		</tr>

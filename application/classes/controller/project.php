@@ -16,6 +16,28 @@ class Controller_Project extends Controller_Loader {
 		$this->template->page_view  = $view;
 	}
 	
+	public function action_show()
+	{
+		$project = ORM::factory('project')
+		 	->where('id','=',$this->request->param('id'))
+			->and_where('trashed','!=',1)
+			->find();
+		
+		if ( ! $project->loaded() )
+		{
+			Msg::instance()->set( Msg::ERROR, 'The project you wanted to see has been trashed. You can restore this project from the trashbin.');
+			$this->request->redirect('project');
+		}
+		
+		$activities = $project->activities->find_all();
+		
+		
+		$this->template->page_title = $project->name;
+		$this->template->page_view  = View::factory('pages/project_show')
+			->bind('project', $project)
+			->bind('activities', $activities);
+	}
+	
 	/**
 	 * This action will create or edit a project. 
 	 */
