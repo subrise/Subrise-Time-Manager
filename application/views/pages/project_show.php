@@ -4,18 +4,20 @@
 
 	<?php echo XgMarkdown_Parser::parse($project->note) ?>
 	
-	
 	<p>
-		<a href="<?php echo URL::site('project/edit/'.$project->id)?>" class="iconic cog" style="font-size:21px"></a>
+		<span class="iconic cog" style="font-size:21px"></span>
 		<a href="<?php echo URL::site('project/edit/'.$project->id)?>">Edit</a>
 	</p>
 	<hr>
 	
 	<h1>Activities</h1>
-	<p><a href="<?php echo URL::site('project') ?>">Activiteit toevoegen</a></p>
+	<p>
+		<span class="iconic arrow-right-alt" style="font-size:21px"></span>
+		<a href="<?php echo URL::site('activity/add/'.$project->id) ?>">Add activity</a>
+	</p>
 	<ul>
 		<?php foreach ($activities as $activity) { ?>
-			<li><?php echo $activity->name ?></li>
+			<li><a href="/activity/show/<?php echo $activity->id ?>"><?php echo $activity->name ?></a></li>
 		<?php } ?>
 	</ul>
 	

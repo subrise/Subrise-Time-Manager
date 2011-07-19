@@ -25,7 +25,7 @@ class Controller_Project extends Controller_Loader {
 		
 		if ( ! $project->loaded() )
 		{
-			Msg::instance()->set( Msg::ERROR, 'The project you wanted to see has been trashed. You can restore this project from the trashbin.');
+			Msg::instance()->set( Msg::ERROR, 'The project you wanted to see is either trashed, deleted or doesn\'t exist.');
 			$this->request->redirect('project');
 		}
 		
@@ -53,7 +53,7 @@ class Controller_Project extends Controller_Loader {
 			{
 				$project->save();
 				
-				$this->request->redirect('project/edit/'.$project->id);
+				$this->request->redirect('project/show/'.$project->id);
 			}
 			catch (ORM_Validation_Exception $e)
 			{
