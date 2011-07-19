@@ -29,7 +29,7 @@ class Controller_Auth extends Controller {
 			if (Auth::instance()->login($username, $password))
 			{
 				// user logged in succesfully
-				$this->request->redirect('welcome');
+				$this->request->redirect('project');
 			}
 			else
 			{
