@@ -1,9 +1,23 @@
 Subrise Time Manager
 ====================
 
-v0.0.3
-------
-Worked more on aesthetic things. Like adding icons. Found some cool looking icons on http://somerandomdude.com/projects/iconic/
+v0.0.3 - July 20, 2011
+----------------------
+* Worked more on aesthetic things. Like adding icons. Found some cool looking icons on http://somerandomdude.com/projects/iconic/
+* projects can be managed, and thrown in a trash bin
+* activities can be added and assigned to a project
+* user can start recording his working time on an activity
+
+**TODO:**
+* Need to rethink interaction design.
+* Need to style things better
+* Should start on javascript kind of stuff while keeping it backwards compatible with non js users
+* Activities should be able to get tags, mysql tables and ORM model already exist
+* creating analysing tools (graphs etc.)
+
+**Future thoughts**
+Thinking of going public with this project. I know a few people who could use a time manager. My idea is that this webservice is provided free, but accounts can only be created on an invitation.
+So will have to work on privacy settings. Projects should be shared by colleagues. You should be able to make friends, assign roles to friends. Roles that determine who can edit the projects, who can work on which project.. But this will come in the far future (hope a couple of months from now). First need to redesign the basics and work out the kinks.
 
 
 v0.0.2
