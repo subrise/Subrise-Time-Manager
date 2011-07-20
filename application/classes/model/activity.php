@@ -29,5 +29,22 @@ class Model_Activity extends ORM {
 			),
 		);
 	}
+	
+	public function time_spend($user_id = NULL)
+	{
+		$time_in_seconds = 0;
+				
+		if ( empty($user_id) )
+			$hours = $this->hours->where('end','!=',NULL)->find_all();
+		else
+			$hours = $this->hours->where('user_id','=',$user_id)->and_where('end','!=',NULL)->find_all();
+			
+		foreach ($hours as $hour)
+		{
+			$time_in_seconds += $hour->end - $hour->start;
+		}
+		
+		return Date::timetoobj($time_in_seconds);
+	}
 
 } // End Model_Activity

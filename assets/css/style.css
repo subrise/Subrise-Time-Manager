@@ -71,8 +71,8 @@ button {  width: auto; overflow: visible; }
 
 body, select, input, textarea { color: #444; }
 h1, h2, h3, h4, h5, h6 { font-weight: bold; }
-a, a:active, a:visited { color: #607890; }
-/*a:hover { color: #036; }*/
+a, a:active, a:visited { color: #607890; text-decoration:none;}
+a:hover { color: #036; text-decoration:underline; }
 
 
 /**
@@ -83,30 +83,26 @@ a, a:active, a:visited { color: #607890; }
 
 /* fonts
 *************************************************************************/
-.content h1					{ font-size: 138.5%; margin: 1em 0; }
-.content h2              	{ font-size: 116%; margin: 1em 0; }
-.content h3              	{ font-size: 108%; margin: 1em 0; }
-.content p, .content td		{ line-height:18px; font-size:93%; }
-.content h4, .content p,
-.content blockquote, .content ul,
-.content fieldset, .content form,
-.content ol, .content dl, .content dir,
-.content menu            	{ margin: 1em 0 }
-.content h4,
-.content h5, .content h6, .content b, .content h1 span
-.content strong          	{ font-weight: bolder }
-.content blockquote      	{ margin-left: 40px; margin-right: 40px }
-
-.content big             	{ font-size: 123.1%; }
-.content small, .content sub, .content sup 
-							{ font-size: 77%; }
-
-.content ol, .content ul, .content dir, .content menu, 
-.content dd					{ margin-left: 40px }
-.content ol li				{ list-style-type:decimal;}
-.content ul li				{ list-style-type:disc; min-height: 20px;}
-.content em, .content i		{ font-style: italic;}
-.content a:hover			{ text-decoration:none;}
+h1                  { font-size: 138.5%; margin: 1em 0; }
+h2                  { font-size: 116%; margin: 1em 0; }
+h3                  { font-size: 108%; margin: 1em 0; }
+p, td               { line-height:18px; font-size:93%; }
+h4, p,
+blockquote,  ul,
+fieldset,  form,
+ol,  dl,  dir,
+menu                { margin: 1em 0 }
+h4,
+h5, h6, b, h1 span
+strong              { font-weight: bolder }
+blockquote          { margin-left: 40px; margin-right: 40px }
+big                 { font-size: 123.1%; }
+small,  sub,  sup   { font-size: 77%; }
+ol, ul,  dir,  
+menu, dd            { margin-left: 40px; }
+ol li               { list-style-type:decimal;}
+ul li               { list-style-type:disc; min-height: 20px;}
+em, .content i      { font-style: italic;}
 
 .iconic { text-decoration:none; }
 
@@ -213,16 +209,6 @@ ul.menu
 	padding:0 10px;
 }
 
-.menu a
-{
-	text-decoration:none;
-}
-
-.menu a:hover
-{
-	text-decoration:underline;
-}
-
 /* Global styles
 *************************************************************************/
 label
@@ -242,6 +228,11 @@ input[type=submit]
 	width:auto;
 }
 
+table
+{
+	width:100%;
+}
+
 th
 {
 	padding: 0 10px 10px;
@@ -249,16 +240,78 @@ th
 	margin:0 0 10px;
 }
 
+th:first-child
+{
+	text-align:left;
+}
+
 td
 {
 	padding:10px;
 }
 
+td:nth-child(n+2)
+{
+	text-align:center;
+}
 
 
-td a.iconic
+td a.iconic, td a, td a.iconic:hover
 {
 	text-decoration:none;
+}
+
+td a:hover
+{
+	text-decoration:underline;
+}
+
+article
+{
+	border:1px solid #bbb;
+	background:#f9f9f9;
+	padding:10px 20px 20px;
+	position:relative;
+}
+
+article aside
+{
+	border: 1px solid #ddd;
+	background:#fff;
+	position:relative;
+}
+
+article aside h2
+{
+	margin:1em;
+}
+
+article aside nav
+{
+	position:absolute;
+	top:10px;
+	right:10px;
+}
+
+article footer nav
+{
+	position:absolute;
+	top:10px;
+	right:10px;
+}
+
+article footer nav ul
+{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+article footer nav li
+{
+	list-style:none;
+	margin:0;
+	float:right;
 }
 
 

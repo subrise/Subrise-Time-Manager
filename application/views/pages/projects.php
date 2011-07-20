@@ -27,18 +27,29 @@
 	<table>
 		<tr>
 			<th>Project name</th>
-			<th>Time</th>
+			<th>Time spend:</th>
+			<th>By You</th>
+			<th>By All</th>
 		</tr>
 
 		<?php foreach ($projects as $project) {  ?>
 		
 		<tr>
 			<td><a href="<?php echo URL::site('project/show/'.$project->id)?>"><?php echo $project->name?></a></td>
-			<td align="center"><?php 
-				echo $project->time_spend()->hours . ':';
-				if ($project->time_spend()->minutes < 10) 
+			<td></td>
+			<td><?php 
+				$time = $project->time_spend(Auth::instance()->get_user()->id);
+				echo $time->hours . ':';
+				if ($time->minutes < 10) 
 					echo '0';
-				echo $project->time_spend()->minutes;
+				echo $time->minutes;
+				?></td>
+			<td><?php 
+				$time = $project->time_spend();
+				echo $time->hours . ':';
+				if ($time->minutes < 10) 
+					echo '0';
+				echo $time->minutes;
 				?></td>
 		</tr>
 

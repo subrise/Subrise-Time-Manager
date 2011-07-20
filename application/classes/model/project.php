@@ -19,14 +19,18 @@ class Model_Project extends ORM {
 		);
 	}
 	
-	public function time_spend()
+	public function time_spend($user_id = null)
 	{
 		$activities = $this->activities->find_all();
 		$time_in_seconds = 0;
 		
 		foreach ($activities as $activity)
 		{
-			$hours = $activity->hours->where('end','!=',NULL)->find_all();
+			if ( empty($user_id) )
+				$hours = $activity->hours->where('end','!=',NULL)->find_all();
+			else
+				$hours = $activity->hours->where('user_id','=',$user_id)->and_where('end','!=',NULL)->find_all();
+			
 			foreach ($hours as $hour)
 			{
 				$time_in_seconds += $hour->end - $hour->start;
