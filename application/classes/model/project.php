@@ -19,6 +19,23 @@ class Model_Project extends ORM {
 		);
 	}
 	
+	public function time_spend()
+	{
+		$activities = $this->activities->find_all();
+		$time_in_seconds = 0;
+		
+		foreach ($activities as $activity)
+		{
+			$hours = $activity->hours->where('end','!=',NULL)->find_all();
+			foreach ($hours as $hour)
+			{
+				$time_in_seconds += $hour->end - $hour->start;
+			}
+		}
+		
+		return Date::timetoobj($time_in_seconds);
+	}
+	
 	/**
 	 * Returns all the none trashed projects.
 	 */
