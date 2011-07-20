@@ -20,6 +20,16 @@ class Controller_Loader extends Controller_Template {
 	{
 		if (isset($this->template->page_title))
 			View::bind_global('page_title', $this->template->page_title);
+			
+		// check if user is currently working on an activity
+		$user = Auth::instance()->get_user();
+		$hour = $user->hours->where('end', '=', NULL)->find();
+		if ($hour->loaded())
+		{
+			$message  = 'You are currently recording time for the activity: ';
+			$message .= '<a href="'.URL::site('activity/show/'.$hour->activity->id).'">'.$hour->activity->name.'</a>';
+			Msg::instance()->set(Msg::NOTICE, $message);
+		}
 		
 		return parent::after();
 	}

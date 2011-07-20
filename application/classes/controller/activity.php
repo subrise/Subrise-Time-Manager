@@ -97,9 +97,8 @@ class Controller_Activity extends Controller_Loader {
 		$activity = ORM::factory('activity', $this->request->param('id'));
 		if ($activity->loaded())
 		{
-			// first check if an hour is already open
-			$hour = $activity->hours
-				->where('user_id','=', Auth::instance()->get_user()->id)
+			// first check if user already is working
+			$hour = Auth::instance()->get_user()->hours
 				->and_where('end', '=', NULL)
 				->find();
 			if ( ! $hour->loaded() )
@@ -114,7 +113,7 @@ class Controller_Activity extends Controller_Loader {
 			}
 			else
 			{
-				Msg::instance()->set(Msg::NOTICE, 'You are already working on ' . $activity->name .'.');
+				Msg::instance()->set(Msg::ERROR, 'You are already working on ' . $hour->activity->name .' and cannot start a new activity.');
 				$this->request->redirect('activity/show/'.$activity->id);
 			}
 		}
