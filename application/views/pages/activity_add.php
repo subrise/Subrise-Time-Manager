@@ -9,11 +9,18 @@
 	</p>
 	<p>
 		<label for="txtName">Activity name</label>
-		<input type="text" name="name" value="" id="txtName" placeholder="The activity you're planning to do">
+		<?php echo Form::input('name', $activity->name, array(
+			'id' => 'txtName',
+			'placeholder' => 'The name of what you are about to do for the project.',
+			'required'
+		)) ?>
 	</p>
 	<p>
 		<label for="txtNote">Note</label>
-		<textarea name="note" rows="8" cols="40" placeholder="Some extra notes about the activity"></textarea>
+		<?php echo Form::textarea('note', $activity->note, array(
+			'id'          => 'txtNote',
+			'placeholder' => 'Some extra description of what you are underetaking.',
+		)) ?>
 	</p>
 	
 	<p><input type="submit" name="submit" value="Add activity"></p>

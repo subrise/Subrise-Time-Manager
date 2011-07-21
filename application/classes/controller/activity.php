@@ -5,10 +5,10 @@ class Controller_Activity extends Controller_Loader {
 	public function action_add()
 	{
 		$post = $this->request->post();
+		$activity = ORM::factory('activity');
 		
 		if ($post)
 		{
-			$activity = ORM::factory('activity');
 			$activity->values($post);
 			
 			try
@@ -38,7 +38,47 @@ class Controller_Activity extends Controller_Loader {
 		$project_id = $this->request->param('id');
 		$this->template->page_view = View::factory('pages/activity_add')
 			->bind('project_id', $project_id)
-			->bind('project_options', $project_options);
+			->bind('project_options', $project_options)
+			->bind('activity', $activity);
+	}
+	
+	public function action_edit()
+	{
+		$activity = ORM::factory('activity', $this->request->param('id'));
+		
+		$post = $this->request->post();
+		if ($post)
+		{
+			$activity->values($post);
+			try
+			{
+				$activity->save();
+				Msg::instance()->set( Msg::SUCCESS, 'Activity successful updated.');
+				$this->request->redirect('activity/show/'.$activity->id);
+			}
+			catch (ORM_Validation_Exception $e)
+			{
+				$errors = $e->errors('models');
+				foreach ($errors as $error_key => $error)
+				{
+					Msg::instance()->set( Msg::ERROR, $error);
+				}
+			}
+		}
+		
+		$projects = ORM::factory('project')->get_projects();
+		$project_options = array();
+		foreach ($projects as $project) 
+		{
+			$project_options[$project->id] = $project->name;
+		}
+		
+		$this->template->page_title = 'Update activity';
+		$project_id = $activity->project_id;
+		$this->template->page_view = View::factory('pages/activity_add')
+			->bind('project_id', $project_id)
+			->bind('project_options', $project_options)
+			->bind('activity', $activity);
 	}
 	
 	
