@@ -162,6 +162,12 @@ em, .content i      { font-style: italic;}
 #messages .success .close        { color:#000; }
 #messages .success .close:hover  { color:#062; }
 
+#messages .alert                 { background:#f00; color:#eee; border-bottom:1px solid #444; }
+#messages .alert a               { color:#fff; text-decoration:underline; }
+#messages .alert a:hover         { text-decoration:none; }
+#messages .alert .close          { color:#ccc; }
+#messages .alert .close:hover    { color:#fff; }
+
 
 
 /* Menu's | #menu_main >> Main menu ofcourse - .menu >> global menu layout

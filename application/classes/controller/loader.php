@@ -28,7 +28,7 @@ class Controller_Loader extends Controller_Template {
 		{
 			$message  = 'You are currently recording time for the activity: ';
 			$message .= '<a href="'.URL::site('activity/show/'.$hour->activity->id).'">'.$hour->activity->name.'</a>';
-			Msg::instance()->set(Msg::NOTICE, $message);
+			Msg::instance()->set(Msg::ALERT, $message);
 		}
 		
 		return parent::after();
