@@ -70,7 +70,8 @@ class Controller_User extends Controller_Loader {
 					{
 						if (in_array($role->id, $user_roles))
 						{
-							$user->add('roles', $role);
+							if ( ! $user->has('roles', $role) )
+								$user->add('roles', $role);
 						}
 						else
 						{
