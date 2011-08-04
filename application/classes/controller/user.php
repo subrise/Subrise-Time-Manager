@@ -16,6 +16,33 @@ class Controller_User extends Controller_Loader {
 		$this->template->page_view  = $view;
 	}
 	
+	public function action_show()
+	{
+		$user = ORM::factory('user', $this->request->param('id'));
+		if ( ! $profile->loaded() || ! Auth::instance()->logged_in('admin'))
+		{
+			Msg::instance()->set(Msg::ERROR, 'Oops something went wrong.');
+			$this->request->redirect('project');
+		}
+		
+		$activities = array();
+		
+		$hours = $user->hours
+			->order_by('start','desc')
+			->find_all();
+			
+		foreach ($hours as $hour)
+		{
+			$activity = $hour->activity;
+			$activities[] = $activity;
+		}
+			
+		$this->template->page_title = $user->username;
+		$this->template->page_view  = View::factory('pages/user_show')
+			->bind('activities', $activities)
+			->bind('user', $user);
+	}
+	
 	/**
 	 * This action will edit the users data
 	 * Only users with the admin role will be able to edit other users.
