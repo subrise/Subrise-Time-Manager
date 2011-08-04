@@ -2,3 +2,5 @@ application/logs
 application/cache
 .project
 .settings
+.hg
+.hgignore
